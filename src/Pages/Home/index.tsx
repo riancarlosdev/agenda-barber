@@ -1,9 +1,13 @@
+import { MaxWidthComponent } from '@components/Global/MaxWidth';
+import { HeaderComponent } from '@components/Header';
 import { WapperContainer } from './styles';
 
 export const HomePage: React.FC = (): JSX.Element => {
   return (
-    <WapperContainer>
-      <p>Pagina de Error</p>
-    </WapperContainer>
+    <MaxWidthComponent>
+      <WapperContainer>
+        <HeaderComponent />
+      </WapperContainer>
+    </MaxWidthComponent>
   );
 };
