@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { BsCheck } from 'react-icons/bs';
 import { services } from './data';
 import {
@@ -14,17 +14,28 @@ import {
 } from './styles';
 
 export const StepServicesComponent: React.FC = (): JSX.Element => {
-  const [selected, setSelected] = useState<string>('');
+  const [selected, setSelected] = useState<string[]>(['']);
+
+  const handleOnClick = useCallback(
+    (selected: string[], id: string) => {
+      if (!selected.includes(id) && selected.filter((item) => item === id)) {
+        return setSelected([...selected, id]);
+      }
+      return setSelected(selected.filter((index) => index !== id));
+    },
+    [setSelected],
+  );
+
   return (
     <WapperServices>
       <ListServices>
         {services.map((item) => (
           <ItemServices
-            active={selected === item.id}
-            onClick={selected === item.id ? undefined : () => setSelected(item.id)}
+            active={selected.some((index) => index === item.id)}
+            onClick={() => handleOnClick(selected, item.id)}
             key={item.id}
           >
-            {selected === item.id && (
+            {selected.some((index) => index === item.id) && (
               <WapperSelected>
                 <BsCheck size={28} color='#fff' />
               </WapperSelected>
