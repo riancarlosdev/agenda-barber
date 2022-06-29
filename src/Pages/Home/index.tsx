@@ -4,6 +4,7 @@ import { SectionComponent } from '@components/Section';
 import { useState } from 'react';
 import { StepSelectBarbersComponent } from './Steps/Barbers';
 import { StepSelectDayComponent } from './Steps/Day';
+import { StepHoursComponent } from './Steps/hours';
 import { StepServicesComponent } from './Steps/Services';
 import { WapperContainer, WapperInputName, Input, WapperTotalLength } from './styles';
 
@@ -32,6 +33,10 @@ export const HomePage: React.FC = (): JSX.Element => {
 
         <SectionComponent title='Escolha o dia:'>
           <StepSelectDayComponent />
+        </SectionComponent>
+
+        <SectionComponent title='Escolha o horário:'>
+          <StepHoursComponent />
         </SectionComponent>
       </WapperContainer>
     </MaxWidthComponent>
