@@ -30,6 +30,10 @@ export const WapperItemBarbers = styled.div<{ active?: boolean }>`
   opacity: ${({ active }) => (active ? '1' : '0.5')};
 
   :hover {
+    opacity: 1;
+  }
+
+  :hover {
     .hover-barber-item {
       transform: ease 0.3s;
       bottom: 0;
