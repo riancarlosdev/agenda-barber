@@ -47,7 +47,7 @@ export const WapperTotalLength = styled.div<{ status?: number }>`
     }
     if ((status && status < 11) || status === 0) {
       return css`
-        background: #7df521;
+        background: #21f58b;
       `;
     }
   }}

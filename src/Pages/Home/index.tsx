@@ -3,6 +3,7 @@ import { HeaderComponent } from '@components/Header';
 import { SectionComponent } from '@components/Section';
 import { useState } from 'react';
 import { StepSelectBarbersComponent } from './Steps/Barbers';
+import { StepServicesComponent } from './Steps/Services';
 import { WapperContainer, WapperInputName, Input, WapperTotalLength } from './styles';
 
 export const HomePage: React.FC = (): JSX.Element => {
@@ -22,6 +23,10 @@ export const HomePage: React.FC = (): JSX.Element => {
             <Input maxLength={23} onChange={(e) => setLengthInputName(e.target.value.length)} />
             <WapperTotalLength status={lengthInputName}>{lengthInputName}/23</WapperTotalLength>
           </WapperInputName>
+        </SectionComponent>
+
+        <SectionComponent title='Escolha os serviços:'>
+          <StepServicesComponent />
         </SectionComponent>
       </WapperContainer>
     </MaxWidthComponent>
