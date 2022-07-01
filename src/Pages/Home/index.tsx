@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { StepSelectBarbersComponent } from './Steps/Barbers';
 import { StepSelectDayComponent } from './Steps/Day';
 import { StepHoursComponent } from './Steps/hours';
+import { StepNoteComponent } from './Steps/Note';
 import { StepServicesComponent } from './Steps/Services';
 import { WapperContainer, WapperInputName, Input, WapperTotalLength } from './styles';
 
@@ -23,6 +24,12 @@ export const HomePage: React.FC = (): JSX.Element => {
           </WapperInputName>
         </SectionComponent>
 
+        <SectionComponent title='Digite o e-mail para envio do comprovante de pagamento:'>
+          <WapperInputName>
+            <Input />
+          </WapperInputName>
+        </SectionComponent>
+
         <SectionComponent title='Escolha a Barbearia:'>
           <StepSelectBarbersComponent />
         </SectionComponent>
@@ -35,8 +42,12 @@ export const HomePage: React.FC = (): JSX.Element => {
           <StepSelectDayComponent />
         </SectionComponent>
 
-        <SectionComponent title='Escolha o horário:'>
+        <SectionComponent title='Escolha o horário disponivel:'>
           <StepHoursComponent />
+        </SectionComponent>
+
+        <SectionComponent title='Nota de pagamento:'>
+          <StepNoteComponent />
         </SectionComponent>
       </WapperContainer>
     </MaxWidthComponent>
